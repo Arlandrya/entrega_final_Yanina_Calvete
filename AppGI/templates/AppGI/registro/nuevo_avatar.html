@@ -1,0 +1,21 @@
+{% extends "AppGI/padre.html" %}
+
+{% block titulo_pagina %}
+Bienvenido
+{% endblock %}
+
+
+{% block titulo_principal %}
+Inicio de sesion para registrar equipos para Genshin Impact
+{% endblock %}
+
+{% block parrafo_form %}
+<form action="" method="post" enctype="multipart/form-data"> {% csrf_token %}
+
+{{formu}}
+
+<input type="submit" value="Crear Avatar">
+
+</form>
+
+{% endblock %}

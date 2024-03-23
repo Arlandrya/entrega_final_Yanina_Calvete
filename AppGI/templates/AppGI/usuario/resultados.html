@@ -1,0 +1,19 @@
+{% extends "AppGI/padre.html" %}
+
+
+{% block titulo_principal %}
+Resultado de Usuarios de Genshin Impact
+{% endblock %}
+
+{% block parrafo_form %}
+
+{% for usuario in resultado %}
+
+<h5>El usuario que usted busca es {{usuario.usuario}} --- UID: {{usuario.uids}} --- Server: {{usuario.server}} </h5>
+
+{% empty %}
+
+    <p>   No hay usuario con esas caracteristicas.</p>
+
+{% endfor %}
+{% endblock %}

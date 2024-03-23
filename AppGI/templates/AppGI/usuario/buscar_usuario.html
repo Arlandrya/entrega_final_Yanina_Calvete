@@ -1,0 +1,17 @@
+{% extends "AppGI/padre.html" %}
+
+
+{% block titulo_principal %}
+Busqueda de Usuarios de Genshin Impact
+{% endblock %}
+
+{% block parrafo_form %}
+<form action="/AGI/resultados" method="GET">
+
+    Ingrese el usuario a buscar: <input type="text" name="usuario">
+    <input type="submit" value="Buscar">
+
+
+</form>
+
+{% endblock %}

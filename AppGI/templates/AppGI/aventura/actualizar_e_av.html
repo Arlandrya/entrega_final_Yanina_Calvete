@@ -1,0 +1,21 @@
+{% extends "AppGI/padre.html" %}
+
+{% block titulo_pagina %}
+Actualizar equipos de aventura
+{% endblock %}
+
+
+{% block titulo_principal %}
+Actualizar equipos de aventura de Genshin Impact
+{% endblock %}
+
+{% block parrafo_form %}
+<form action="" method="post"> {% csrf_token %}
+
+{{formu}}
+
+<input type="submit" value="Guardar">
+
+</form>
+
+{% endblock %}

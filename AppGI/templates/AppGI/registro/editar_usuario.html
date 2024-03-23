@@ -1,0 +1,21 @@
+{% extends "AppGI/padre.html" %}
+
+{% block titulo_pagina %}
+Editar Usuario
+{% endblock %}
+
+
+{% block titulo_principal %}
+Editar informacion para registrar equipos para Genshin Impact
+{% endblock %}
+
+{% block parrafo_form %}
+<form action="" method="post"> {% csrf_token %}
+
+{{form}}
+
+<input type="submit" value="Editar">
+
+</form>
+
+{% endblock %}

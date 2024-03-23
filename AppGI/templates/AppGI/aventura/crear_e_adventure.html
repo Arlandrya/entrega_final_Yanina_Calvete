@@ -1,0 +1,21 @@
+{% extends "AppGI/padre.html" %}
+
+{% block titulo_pagina %}
+Crear equipo Aventurero
+{% endblock %}
+
+
+{% block titulo_principal %}
+Registro de equipos de aventura de Genshin Impact
+{% endblock %}
+
+{% block parrafo_form %}
+<form action="" method="post"> {% csrf_token %}
+
+{{formu}}
+
+<input type="submit" value="Guardar">
+
+</form>
+
+{% endblock %}

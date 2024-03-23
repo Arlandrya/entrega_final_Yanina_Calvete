@@ -1,0 +1,29 @@
+{% extends "AppGI/padre.html" %}
+
+
+{% block titulo_principal %}
+Los equipos para el abismo que se usan en Genshin Impact
+{% endblock %}
+
+{% block parrafo_form %}
+
+<h5>Los equipos para el abismo son: </h5>
+
+<ol>
+    {% for valor_e_ab in v_e_abismo %}
+
+        <li>Formado por: {{valor_e_ab.pj_nombre}} ----- sus elementos son: {{valor_e_ab.pj_elemento}} ------ sus levels son: {{valor_e_ab.pj_lv}} ------ la fecha del abismo es de: {{valor_e_ab.fecha_abismo}} y si se completó {{valor_e_ab.paso}}</li>
+        
+        {% if user.is_authenticated %}
+        <a href="{%url 'Editar Equipo Abismo' valor_e_ab.id %}" >Editar Equipo para el Abismo</a>
+        <a href="{%url 'Eliminar Equipo Abismo' valor_e_ab.id %}" >Eliminar Equipo para el Abismo</a>
+        {% endif %}
+
+
+    {% endfor %}
+
+</ol>
+
+<a class="btn btn-primary" href="{%url 'crear_e_abiss' %}" >Nuevo Equipo para el Abismo</a>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "AppGI/padre.html" %}
+
+
+{% block titulo_principal %}
+Los equipos de Aventura que se usan en Genshin Impact
+{% endblock %}
+
+{% block parrafo_form %}
+
+<h5>Los equipos de aventura son: </h5>
+
+<ol>
+    {% for valor_e_av in v_e_aventura %}
+
+        <li>Formado por: {{valor_e_av.pj_nombre}} ----- sus elementos son: {{valor_e_av.pj_elemento}} ------ sus levels son: {{valor_e_av.pj_lv}}</li>
+        {% if user.is_authenticated %}
+
+        <a href="{%url 'Editar Equipo Aventura' valor_e_av.id %}" >Editar Equipo de Aventura</a>
+        <a href="{%url 'Eliminar Equipo Aventura' valor_e_av.id %}" >Eliminar Equipo de Aventura</a>
+
+        {% endif %}
+
+    {% endfor %}
+
+</ol>
+
+<a class="btn btn-primary" href="{%url 'crear_e_adventure' %}" >Nuevo Equipo de Aventura</a>
+
+{% endblock %}

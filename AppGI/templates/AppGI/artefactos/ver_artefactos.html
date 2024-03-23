@@ -1,0 +1,29 @@
+{% extends "AppGI/padre.html" %}
+
+
+{% block titulo_principal %}
+Los Artefactos que se usan en Genshin Impact
+{% endblock %}
+
+{% block parrafo_form %}
+
+<h5>Los artefactos son: </h5>
+
+<ol>
+    {% for valor_ar in v_ar %}
+
+        <li>Los artefactos de {{valor_ar.pj_nombre}} son: pluma: {{valor_ar.pluma}} ----- reloj: {{valor_ar.reloj}} ------ gorro: {{valor_ar.gorro}} ------ copa: {{valor_ar.copa}} ------ flor: {{valor_ar.flor}} ------- con un level general de {{valor_ar.lv_general}}</li>
+        
+        {% if user.is_authenticated %}
+        <a href="{%url 'Editar Artefactos' valor_ar.id %}" >Editar Artefacto</a>
+        <a href="{%url 'Eliminar Artefactos' valor_ar.id %}" >Eliminar Artefacto</a>
+        {% endif %}
+
+
+    {% endfor %}
+
+</ol>
+
+<a class="btn btn-primary" href="{%url 'crear_artefactos' %}" >Nuevo Artefacto</a>
+
+{% endblock %}
